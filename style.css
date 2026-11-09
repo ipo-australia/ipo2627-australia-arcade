@@ -1,0 +1,41 @@
+/* define los colores, la tipografía y la distribución de la página */
+:root {
+  color-scheme: dark;
+  --background: #0b1220;
+  --panel: #142236;
+  --text: #ecf4ff;
+  --muted: #afc1d8;
+  --accent: #72e0ef;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at top, #1b3553, var(--background) 70%);
+  min-height: 100vh;
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+main { width: min(100% - 2rem, 640px); margin: 2rem auto; }
+h1 { margin: 0; font-size: 3rem; letter-spacing: -.04em; color: var(--accent); text-shadow: 0 0 24px #72e0ef44; }
+header p { color: var(--muted); margin: .5rem 0 1.5rem; }
+.toolbar, .controls { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+.toolbar { justify-content: space-between; margin-bottom: 1rem; }
+select, button { font: inherit; border: 1px solid var(--muted); border-radius: .5rem; padding: .55rem .8rem; }
+select { background: var(--panel); color: var(--text); margin-left: .5rem; }
+button { transition: transform .15s, filter .15s; background: var(--panel); color: var(--text); cursor: pointer; }
+#start { background: var(--accent); color: var(--background); border-color: var(--accent); font-weight: 700; }
+button:disabled { opacity: .4; cursor: default; }
+button:not(:disabled):hover { filter: brightness(1.2); transform: translateY(-2px); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+canvas { display: block; width: 100%; background: linear-gradient(#091322, #172f48); border: 1px solid #38516e; border-radius: .75rem; box-shadow: 0 12px 35px #0005; }
+#status { min-height: 1.5em; color: var(--muted); }
+details { margin-top: 1.5rem; border-top: 1px solid #38516e; padding-top: 1rem; color: var(--muted); }
+summary { cursor: pointer; color: var(--text); font-weight: 600; }
+
+.toolbar strong { color: var(--accent); font-size: 1.5rem; font-variant-numeric: tabular-nums; }
+.controls button { flex: 1; }
+@media (prefers-reduced-motion: reduce) {
+  button { transition: none; }
+  button:not(:disabled):hover { transform: none; }
+}

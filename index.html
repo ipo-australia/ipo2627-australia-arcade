@@ -1,0 +1,47 @@
+﻿<!-- contiene la interfaz y la ayuda del juego -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Órbita · Arcade</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="model.js" defer></script>
+  <script src="view.js" defer></script>
+  <script src="controller.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Órbita</h1>
+      <p>Mueve tu nave. Esquiva los meteoritos.</p>
+    </header>
+    <section aria-label="Juego">
+      <div class="toolbar">
+        <label>Dificultad
+          <select id="difficulty">
+            <option value="160">Fácil</option>
+            <option value="240" selected>Normal</option>
+            <option value="320">Difícil</option>
+          </select>
+        </label>
+        <p>Puntos: <strong id="score">0</strong></p>
+      </div>
+      <canvas id="game" width="600" height="400" tabindex="0" aria-label="Zona de juego. Mueve la nave con las flechas izquierda y derecha.">Tu navegador debe admitir canvas para jugar.</canvas>
+      <p id="status" role="status">Pulsa comenzar para jugar.</p>
+      <div class="controls">
+        <button id="start">Comenzar</button>
+        <button id="pause" disabled>Pausar</button>
+        <button id="finish" disabled>Finalizar</button>
+      </div>
+    </section>
+    <details>
+      <summary>Cómo jugar</summary>
+      <p>Usa las flechas izquierda y derecha para esquivar los meteoritos.</p>
+      <p>Consigues un punto por cada meteorito que pasa. Una colisión termina la partida. Elige la dificultad antes de comenzar: cambia la velocidad de los meteoritos.</p>
+      <p>Puedes pausar y reanudar con el botón. Finalizar termina la partida; comenzar inicia otra desde cero.</p>
+    </details>
+  </main>
+</body>
+</html>
+
